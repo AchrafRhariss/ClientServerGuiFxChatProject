@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="553.0" prefWidth="636.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatClient.ClientController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutY="492.0" prefHeight="61.0" prefWidth="636.0" spacing="10.0" style="-fx-background-color: #eee;">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <children>
+            <JFXTextField fx:id="messageTf" focusColor="WHITE" prefHeight="37.0" prefWidth="563.0" promptText="Type a message..." style="-fx-background-color: #FFF;" unFocusColor="#b2b2b2">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </JFXTextField>
+            <JFXButton id="btn" fx:id="sendBtn" alignment="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#sendMessage" prefHeight="45.0" prefWidth="48.0" style="-fx-border-radius: 100%; -fx-background-radius: 100%; -fx-background-color: lightgrey; -fx-cursor: hand;">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" prefHeight="61.0" prefWidth="636.0" style="-fx-background-color: #fdcb6e; -fx-border-width: 2px; -fx-border-color: black;" text="Client Chat" textFill="WHITE">
+         <font>
+            <Font name="Consolas" size="32.0" />
+         </font>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </Label>
+      <Circle fx:id="status" fill="#21ff4f" layoutX="215.0" layoutY="32.0" radius="6.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="2.0" />
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutY="61.0" style="-fx-background-color: #FFF;">
+         <content>
+            <VBox fx:id="messageArea" prefHeight="435.0" prefWidth="636.0" style="-fx-background-color: #FFF;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
